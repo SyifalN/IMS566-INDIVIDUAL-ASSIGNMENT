@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1" />
+   <title>Home - ePortfolio</title>
+
+   <!-- Google Font -->
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+   <!-- Bootstrap CSS -->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+   <!-- Bootstrap Icons -->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+   <!-- Custom CSS -->
+   <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="navbar-brand" href="homepage.html"><i class="bi bi-journal-code"></i> ePortfolio</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto text-center">
+          <li class="nav-item"><a class="nav-link active" href="homepage.html"><i class="bi bi-house-door"></i> Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="dashboard.html"><i class="bi bi-speedometer2"></i> Dashboard</a></li>
+          <li class="nav-item"><a class="nav-link" href="profiles.html"><i class="bi bi-person-circle"></i> Profiles</a></li>
+          <li class="nav-item"><a class="nav-link" href="logout.html"><i class="bi bi-box-arrow-right"></i> Logout</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+<!-- Additional Info Section -->
+<div class="container my-5">
+   <div class="row g-4 justify-content-center text-center">
+      
+      <!-- Current Date and Time -->
+      <div class="col-md-4">
+         <div class="info-card time-card shadow p-4 rounded text-white">
+            <h5>🕒 Current Time & Date</h5>
+            <p id="clock" class="fs-5 fw-semibold mb-1"></p>
+            <p id="date" class="fs-6"></p>
+         </div>
+      </div>
+
+      <!-- Quote of the Day -->
+      <div class="col-md-4">
+         <div class="info-card quote-card shadow p-4 rounded text-white">
+            <h5>💡 Quote of the Day</h5>
+            <p id="quote" class="fs-6 fst-italic"></p>
+         </div>
+      </div>
+
+      <!-- Faculty Info -->
+      <div class="col-md-4">
+         <div class="info-card faculty-card shadow p-4 rounded text-white">
+            <h5>🏫 Faculty</h5>
+            <p class="fs-6">
+               Faculty of Information science (FSM)<br>
+               Universiti Teknologi MARA (UiTM)
+            </p>
+         </div>
+      </div>
+
+   </div>
+</div>
+
+   <!-- Home Page Content -->
+<div class="welcome-box">
+  <img src="image/LogoUiTM.png" alt="UiTM Logo" class="welcome-logo"/>
+  <div>
+    <h3 id="typing-text"></h3>
+    <p>
+      This is the official home page for your ePortfolio.<br />
+      <strong>Subject:</strong> Web Development (IMS566)<br />
+      <strong>Instructor:</strong> Dr. Muhammad Asyraf Bin Wahi Anuar<br />
+      <strong>Semester:</strong> 4 (March-August 20252)<br /><br />
+      Use the icons in the navigation bar above to visit your dashboard, profile, or logout.
+    </p>
+  </div>
+</div>
+
+   <!-- Bootstrap JS -->
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+   <!-- Enable Tooltips -->
+   <script>
+      document.addEventListener('DOMContentLoaded', function () {
+         const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+         tooltipTriggerList.forEach(t => new bootstrap.Tooltip(t));
+      });
+   </script>
+
+<script>
+   // Real-time Clock and Date
+   function updateClockAndDate() {
+       const now = new Date();
+       document.getElementById('clock').textContent = now.toLocaleTimeString();
+       document.getElementById('date').textContent = now.toLocaleDateString(undefined, {
+           weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+       });
+   }
+   setInterval(updateClockAndDate, 1000);
+   updateClockAndDate();
+
+   // Quote of the Day
+   const quotes = [
+       "The best way to get started is to quit talking and begin doing. – Walt Disney",
+       "Success is not in what you have, but who you are. – Bo Bennett",
+       "Don’t watch the clock; do what it does. Keep going. – Sam Levenson",
+       "The only limit to our realization of tomorrow is our doubts of today. – FDR",
+       "Believe you can and you're halfway there. – Theodore Roosevelt"
+   ];
+   const quoteEl = document.getElementById('quote');
+   const dailyQuote = quotes[new Date().getDate() % quotes.length];
+   quoteEl.textContent = dailyQuote;
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const text = "Welcome to CDIM26 - Class 4B";
+    const typingEl = document.getElementById("typing-text");
+    let index = 0;
+    let isDeleting = false;
+
+    function typeEffect() {
+      if (isDeleting) {
+        typingEl.innerHTML = text.substring(0, index--);
+      } else {
+        typingEl.innerHTML = text.substring(0, index++);
+      }
+
+      // Typing speed
+      let speed = isDeleting ? 50 : 100;
+
+      // When finished typing
+      if (!isDeleting && index === text.length + 1) {
+        speed = 1200; // pause before deleting
+        isDeleting = true;
+      }
+
+      // When finished deleting
+      else if (isDeleting && index === 0) {
+        speed = 500;
+        isDeleting = false;
+      }
+
+      setTimeout(typeEffect, speed);
+    }
+
+    typeEffect();
+  });
+</script>
+
+   <footer>
+      <p>&copy; 2025 CDIM262 ePortfolio - Created by Syifa Nadia</p>
+   </footer>
+
+</body>
+
+</html>

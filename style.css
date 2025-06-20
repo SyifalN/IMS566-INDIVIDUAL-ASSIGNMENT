@@ -1,0 +1,420 @@
+/* === style.css === */
+
+/* Google Font Styling */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+}
+
+.navbar .nav-link {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+/* Navbar brand: icon and text close together */
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.4rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* General Body Styling */
+body {
+  font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+  color: #2c3e50;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navbar Styling */
+.navbar {
+  background-color: #2c3e50;
+}
+
+.navbar .nav-link {
+  color: white;
+  margin-right: 15px;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+  color: #18bc9c !important;
+  font-weight: bold;
+}
+
+/* Login Card */
+.login-card {
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Buttons */
+button, .btn {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  font-size: 1rem;
+}
+
+.btn-primary {
+  background-color: #18bc9c;
+  border-color: #18bc9c;
+}
+
+.btn-primary:hover {
+  background-color: #15a589;
+  border-color: #15a589;
+}
+
+/* Dashboard Card Styling */
+.card {
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+.card .card-title {
+  font-weight: 600;
+}
+
+.card .card-text {
+  font-size: 16px;
+}
+
+/* Profile Cards */
+.profile-card {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.2s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-card:hover {
+  transform: translateY(-5px);
+}
+
+.card-img-top {
+  height: 320px;
+  object-fit: cover;
+}
+
+/* Welcome Box Styling */
+.welcome-box {
+  background-color: #18bc9c;
+  color: white;
+  padding: 50px;
+  margin-top: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  text-align: left;
+  animation: fadeIn 1s ease-out both;
+}
+
+.welcome-box h3 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.welcome-box p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+/* Flex container for optional box content */
+.welcome-box.d-flex {
+  gap: 1.5rem;
+}
+
+/* UiTM logo inside welcome box */
+.welcome-logo {
+  width: 300px;
+  height: auto;
+  object-fit: contain;
+  user-select: none;
+}
+
+/* Footer Styling */
+footer {
+  background-color: #2c3e50;
+  color: white;
+  padding: 25px 0;
+  text-align: center;
+  font-size: 15px;
+  margin-top: 50px;
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.05);
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+footer p {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.4px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .navbar .nav-link {
+    margin-right: 5px;
+  }
+
+  .welcome-box {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* === Fade In Animation === */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Info Card Uniform Styling */
+.info-card {
+   min-height: 200px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   border-radius: 12px;
+   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+   transition: transform 0.3s ease;
+}
+
+.info-card:hover {
+   transform: translateY(-5px);
+}
+
+/* Specific Card Colors */
+.time-card {
+   background-color: #003366; /* Dark Blue */
+}
+
+.quote-card {
+   background-color: #6a1b9a; /* Purple */
+}
+
+.faculty-card {
+   background-color: #2e7d32; /* UiTM Green Theme */
+}
+
+#typing-text::after {
+  content: '|';
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+#progressPie {
+  max-width: 250px;
+  margin: 0 auto;
+}
+
+.card-body canvas {
+  max-width: 180px;
+  max-height: 180px;
+  margin: auto;
+  display: block;
+}
+
+.card.h-100 {
+  min-height: 300px; /* Same height as other cards */
+}
+
+@media (max-width: 768px) {
+  .card.h-100 {
+    min-height: auto;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Make the doughnut chart card body align at the bottom */
+.card-body.d-flex.align-items-center.justify-content-center.w-100 {
+  flex-grow: 1;
+  display: flex !important;
+  justify-content: center;
+  align-items: flex-end !important;
+  padding-bottom: 1rem;
+}
+
+.profile-card {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.2s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  background-color: #f1f1f1;
+}
+
+.blockquote {
+  background-color: #ffffff;
+  border-left: 5px solid #d5b224;
+  padding: 1rem 1.5rem;
+  margin: 2rem auto;
+  max-width: 700px;
+  box-shadow:  2px 10px #ffb3015f;
+  border-radius: 8px;
+}
+
+.blockquote p {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.blockquote-footer {
+  color: #18bc9c;
+  font-size: 0.95rem;
+}
+
+.progress-header {
+  background-color: #18bc9c; /* Teal color */
+  color: white;
+  font-weight: 600;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+}
+
+/* === Login Page Enhancements === */
+.login-bg {
+  background: linear-gradient(135deg, #18bc9c 0%, #2c3e50 100%);
+  font-family: 'Poppins', sans-serif;
+}
+
+.login-card {
+  max-width: 420px;
+  border-radius: 15px;
+  background-color: #ffffff;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  animation: fadeIn 1s ease-in-out;
+}
+
+.login-card h4 {
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.login-card .btn-primary {
+  background-color: #18bc9c;
+  border: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.login-card .btn-primary:hover {
+  background-color: #15a589;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f3dfc1a2;
+      color: #333;
+    }
+
+    .navbar, .footer {
+      background-color: #2c3e50;
+    }
+
+    .profile-container {
+      animation: fadeIn 1.2s ease-in;
+      background-color: #dfc0c0;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .profile-img {
+      max-width: 250px;
+      border-radius: 50%;
+      border: 5px solid #c08bdd94;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease;
+    }
+
+    .profile-img:hover {
+      transform: scale(1.05);
+    }
+
+    .typing {
+      border-right: 2px solid #333;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 0;
+      animation: typing 3s steps(30, end) forwards, blink 0.7s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .btn-outline-dark:hover {
+      background-color: #d6cfc2;
+      color: #000;
+    }
+
+    footer {
+      background-color: #2c3e50;
+      color: #d0c29f;
+    }
+

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login - ePortfolio</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap CSS & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="login-bg">
+  <div class="container d-flex justify-content-center align-items-center vh-100">
+    <div class="card p-4 shadow login-card animated fadeIn">
+      <div class="text-center mb-4">
+        <i class="bi bi-journal-code display-5 text-primary"></i>
+        <h4 class="mt-2">Login to <span class="text-success">ePortfolio</span></h4>
+      </div>
+      <form onsubmit="login(event)">
+        <div class="mb-3">
+          <label class="form-label">Email</label>
+          <input type="email" class="form-control" id="email" placeholder="example@uitm.edu.my" required>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Password</label>
+          <input type="password" class="form-control" id="password" placeholder="Enter your password" required>
+        </div>
+        <button class="btn btn-primary w-100">Login <i class="bi bi-box-arrow-in-right ms-1"></i></button>
+      </form>
+      <div class="text-center mt-3">
+        <small class="text-muted">© 2025 CDIM262 - UiTM | Created by Syifa Nadia</small>
+      </div>
+    </div>
+  </div>
+
+  <!-- JS -->
+  <script>
+    function login(event) {
+      event.preventDefault();
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      if (email && password) {
+        window.location.href = 'homepage.html'; // Go to homepage
+      } else {
+        alert('Please fill in both email and password.');
+      }
+    }
+  </script>
+</body>
+</html>
